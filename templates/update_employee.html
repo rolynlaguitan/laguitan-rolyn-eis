@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{ url_for('static', filename='Bulma/bulma.css') }}">
+    <title>Update Employee</title>
+    <style>
+        .box {
+            width: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <div class="box has-text-weight-bold is-family-sans-serif is-size-5 has-background-primary-light is-uppercase has-text-centered">
+            UPDATE EMPLOYEE</div>
+        <div class="box has-text-centered has-background-primary-light is-size-3">
+            <form action="{{ url_for('update_employee', emp_id=employee[0]) }}" method="POST"
+                class="has-background-danger-light">
+                <input type="hidden" name="emp_id" value="{{ employee[0] }}">
+
+                <div class="field">
+                    <label class="label has-text-justified is-size-6 is-family-sans-serif has-text-weight-bold">EMPLOYEE
+                        ID</label>
+                    <div class="control">
+                        <input class="input" name="emp_id" type="text" placeholder="EMPLOYEE ID"
+                            value="{{ employee[0] }}" readonly />
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label has-text-justified is-size-6 is-family-sans-serif">LAST NAME</label>
+                    <div class="control">
+                        <input class="input" name="lname" type="text" placeholder="LAST NAME"
+                            value="{{ employee[1]}}" />
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label has-text-justified is-size-6 is-family-sans-serif">FIRST NAME</label>
+                    <div class="control">
+                        <input class="input" name="fname" type="text" placeholder="FIRST NAME"
+                            value="{{ employee[2] }}" />
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label has-text-justified is-size-6 is-family-sans-serif">MIDDLE NAME</label>
+                    <div class="control">
+                        <input class="input" name="mname" type="text" placeholder="MIDDLE NAME"
+                            value="{{ employee[3] }}" />
+                    </div>
+                </div>
+
+                <button type="submit"
+                    class="button has-text-weight-bold is-family-sans-serif has-background-primary-light">UPDATE</button>
+            </form>
+        </div>
+    </center>
+</body>
+
+</html>
